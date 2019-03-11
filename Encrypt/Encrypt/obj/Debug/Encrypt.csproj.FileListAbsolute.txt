@@ -1,0 +1,9 @@
+D:\Projects_VS\Encrypt\Encrypt\bin\Debug\Encrypt.exe.config
+D:\Projects_VS\Encrypt\Encrypt\bin\Debug\Encrypt.exe
+D:\Projects_VS\Encrypt\Encrypt\bin\Debug\Encrypt.pdb
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.Form1.resources
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.Properties.Resources.resources
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.csproj.GenerateResource.cache
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.csproj.CoreCompileInputs.cache
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.exe
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.pdb

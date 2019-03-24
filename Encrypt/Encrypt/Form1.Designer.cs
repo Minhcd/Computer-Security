@@ -41,9 +41,16 @@
             this.txtVResult = new System.Windows.Forms.TextBox();
             this.txtVInput = new System.Windows.Forms.TextBox();
             this.txtVKey = new System.Windows.Forms.TextBox();
+            this.tab3DS = new System.Windows.Forms.TabPage();
+            this.txt3DSKey = new System.Windows.Forms.TextBox();
+            this.txt3DSInput = new System.Windows.Forms.TextBox();
+            this.txt3DSResult = new System.Windows.Forms.TextBox();
+            this.btnEncrypt3DS = new System.Windows.Forms.Button();
+            this.btnDecrypt3DS = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCeasar.SuspendLayout();
             this.tabVigen.SuspendLayout();
+            this.tab3DS.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInput
@@ -84,6 +91,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabCeasar);
             this.tabControl1.Controls.Add(this.tabVigen);
+            this.tabControl1.Controls.Add(this.tab3DS);
             this.tabControl1.Location = new System.Drawing.Point(12, 7);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -168,6 +176,62 @@
             this.txtVKey.Size = new System.Drawing.Size(100, 20);
             this.txtVKey.TabIndex = 0;
             // 
+            // tab3DS
+            // 
+            this.tab3DS.Controls.Add(this.btnDecrypt3DS);
+            this.tab3DS.Controls.Add(this.btnEncrypt3DS);
+            this.tab3DS.Controls.Add(this.txt3DSResult);
+            this.tab3DS.Controls.Add(this.txt3DSInput);
+            this.tab3DS.Controls.Add(this.txt3DSKey);
+            this.tab3DS.Location = new System.Drawing.Point(4, 22);
+            this.tab3DS.Name = "tab3DS";
+            this.tab3DS.Padding = new System.Windows.Forms.Padding(3);
+            this.tab3DS.Size = new System.Drawing.Size(768, 278);
+            this.tab3DS.TabIndex = 2;
+            this.tab3DS.Text = "3DS";
+            this.tab3DS.UseVisualStyleBackColor = true;
+            // 
+            // txt3DSKey
+            // 
+            this.txt3DSKey.Location = new System.Drawing.Point(6, 18);
+            this.txt3DSKey.Name = "txt3DSKey";
+            this.txt3DSKey.Size = new System.Drawing.Size(100, 20);
+            this.txt3DSKey.TabIndex = 0;
+            // 
+            // txt3DSInput
+            // 
+            this.txt3DSInput.Location = new System.Drawing.Point(6, 83);
+            this.txt3DSInput.Name = "txt3DSInput";
+            this.txt3DSInput.Size = new System.Drawing.Size(170, 20);
+            this.txt3DSInput.TabIndex = 2;
+            // 
+            // txt3DSResult
+            // 
+            this.txt3DSResult.Location = new System.Drawing.Point(208, 83);
+            this.txt3DSResult.Name = "txt3DSResult";
+            this.txt3DSResult.Size = new System.Drawing.Size(170, 20);
+            this.txt3DSResult.TabIndex = 3;
+            // 
+            // btnEncrypt3DS
+            // 
+            this.btnEncrypt3DS.Location = new System.Drawing.Point(6, 129);
+            this.btnEncrypt3DS.Name = "btnEncrypt3DS";
+            this.btnEncrypt3DS.Size = new System.Drawing.Size(75, 23);
+            this.btnEncrypt3DS.TabIndex = 4;
+            this.btnEncrypt3DS.Text = "Encrypt";
+            this.btnEncrypt3DS.UseVisualStyleBackColor = true;
+            this.btnEncrypt3DS.Click += new System.EventHandler(this.btnEncrypt3DS_Click);
+            // 
+            // btnDecrypt3DS
+            // 
+            this.btnDecrypt3DS.Location = new System.Drawing.Point(101, 129);
+            this.btnDecrypt3DS.Name = "btnDecrypt3DS";
+            this.btnDecrypt3DS.Size = new System.Drawing.Size(75, 23);
+            this.btnDecrypt3DS.TabIndex = 5;
+            this.btnDecrypt3DS.Text = "Decrypt";
+            this.btnDecrypt3DS.UseVisualStyleBackColor = true;
+            this.btnDecrypt3DS.Click += new System.EventHandler(this.btnDecrypt3DS_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,6 +245,8 @@
             this.tabCeasar.PerformLayout();
             this.tabVigen.ResumeLayout(false);
             this.tabVigen.PerformLayout();
+            this.tab3DS.ResumeLayout(false);
+            this.tab3DS.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,6 +266,12 @@
         private System.Windows.Forms.TextBox txtVResult;
         private System.Windows.Forms.TextBox txtVInput;
         private System.Windows.Forms.TextBox txtVKey;
+        private System.Windows.Forms.TabPage tab3DS;
+        private System.Windows.Forms.Button btnDecrypt3DS;
+        private System.Windows.Forms.Button btnEncrypt3DS;
+        private System.Windows.Forms.TextBox txt3DSResult;
+        private System.Windows.Forms.TextBox txt3DSInput;
+        private System.Windows.Forms.TextBox txt3DSKey;
     }
 }
 

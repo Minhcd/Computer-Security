@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace Encrypt
 {
@@ -124,6 +125,71 @@ namespace Encrypt
             cipherText = "";
             plainText = "";
             Vkey = "";
+        }
+
+        private void btnEncrypt3DS_Click(object sender, EventArgs e)
+        {
+            txt3DSResult.Text = ThreeDSEncrypt(txt3DSInput.Text, txt3DSKey.Text, true);
+        }
+        public static string ThreeDSEncrypt(string toEncrypt, string key, bool useHashing)
+        {
+            byte[] keyArray;
+            byte[] toEncryptArray =
+            UTF8Encoding.UTF8.GetBytes(toEncrypt);
+            if (useHashing)
+            {
+                MD5CryptoServiceProvider hashmd5 = new
+                MD5CryptoServiceProvider();
+                keyArray =
+                hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                hashmd5.Clear();
+            }
+            else
+                keyArray = UTF8Encoding.UTF8.GetBytes(key);
+            TripleDESCryptoServiceProvider tdes = new
+            TripleDESCryptoServiceProvider();
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tdes.CreateEncryptor();
+            byte[] resultArray =
+            cTransform.TransformFinalBlock(toEncryptArray, 0,
+            toEncryptArray.Length);
+            tdes.Clear();
+            return Convert.ToBase64String(resultArray, 0,
+            resultArray.Length);
+        }
+        public static string ThreeDSDecrypt(string cipherString, string key, bool useHashing)
+        {
+            byte[] keyArray;
+            byte[] toEncryptArray =
+            Convert.FromBase64String(cipherString);
+            if (useHashing)
+            {
+                MD5CryptoServiceProvider hashmd5 = new
+                MD5CryptoServiceProvider();
+                keyArray =
+                hashmd5.ComputeHash(UTF8Encoding.UTF8.GetBytes(key));
+                hashmd5.Clear();
+            }
+            else
+                keyArray = UTF8Encoding.UTF8.GetBytes(key);
+            TripleDESCryptoServiceProvider tdes = new
+            TripleDESCryptoServiceProvider();
+            tdes.Key = keyArray;
+            tdes.Mode = CipherMode.ECB;
+            tdes.Padding = PaddingMode.PKCS7;
+            ICryptoTransform cTransform = tdes.CreateDecryptor();
+            byte[] resultArray =
+            cTransform.TransformFinalBlock(toEncryptArray, 0,
+            toEncryptArray.Length);
+            tdes.Clear();
+            return UTF8Encoding.UTF8.GetString(resultArray);
+        }
+
+        private void btnDecrypt3DS_Click(object sender, EventArgs e)
+        {
+            txt3DSResult.Text = ThreeDSDecrypt(txt3DSInput.Text, txt3DSKey.Text, true); 
         }
     }
 }

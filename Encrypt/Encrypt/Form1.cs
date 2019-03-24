@@ -19,10 +19,11 @@ namespace Encrypt
         public string chuoi;
         public string ketqua;
         public int k;
-        public string Vkey;
-        public string alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";
+        public string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         public string plainText;
         public string cipherText;
+        public string Vkey;
+        
         private void btnCeasar_Click(object sender, EventArgs e)
         {
             EncryptCeasar();
@@ -57,10 +58,12 @@ namespace Encrypt
 
         private void btnVigenereEncrypt_Click(object sender, EventArgs e)
         {
-            VigenereEncrypt();
-            txtVResult.Text = cipherText;
+            string res = VigenereEncrypt();
+            txtVResult.Text = res;
+            cipherText = "";
+            plainText = "";
+            Vkey = "";
         }
-
         public int[] chuoi_mangchiso(string s)
         {
             int[] mang = new int[s.Length];
@@ -75,11 +78,12 @@ namespace Encrypt
                 s += alphabet[a[i]];
             return s;
         }
-        public void VigenereEncrypt()
+        public string VigenereEncrypt()
         {
-            Vkey = txtVKey.Text.ToUpper();
             plainText = txtVInput.Text;
             plainText = plainText.ToUpper();
+            Vkey = txtVKey.Text;
+            Vkey = Vkey.ToUpper();
             int[] p = chuoi_mangchiso(plainText);
             int[] k = chuoi_mangchiso(Vkey);
             int[] kq = new int[plainText.Length];
@@ -89,7 +93,37 @@ namespace Encrypt
                 j = ++j % k.Length;
             }
             cipherText = chiso_chuoi(kq);
-            int a = 0;
+            return cipherText;
+        }
+
+        public string VigenereDecrypt()
+        {
+            cipherText = txtVInput.Text;
+            cipherText = cipherText.ToUpper();
+            Vkey = txtVKey.Text;
+            Vkey = Vkey.ToUpper();
+            int[] c = chuoi_mangchiso(cipherText);
+            int[] k = chuoi_mangchiso(Vkey);
+            int[] kq = new int[cipherText.Length];
+            for (int i = 0, j = 0; i < cipherText.Length; i++)
+            {
+                kq[i] = (c[i] - k[j]) % alphabet.Length;
+                if (kq[i] < 0)
+                    kq[i] = (c[i] + (chuoi.Length - k[j])) % chuoi.Length;
+                j = ++j % k.Length;
+            }
+            plainText = chiso_chuoi(kq);
+            return plainText;
+        }
+
+        private void btnVigenereDecrypt_Click(object sender, EventArgs e)
+        {
+            string res = VigenereDecrypt();
+            txtVResult.Text = res;
+            txtVResult.Text = res;
+            cipherText = "";
+            plainText = "";
+            Vkey = "";
         }
     }
 }

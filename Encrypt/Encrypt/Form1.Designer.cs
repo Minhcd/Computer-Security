@@ -36,11 +36,11 @@
             this.tabCeasar = new System.Windows.Forms.TabPage();
             this.txtDoDoi = new System.Windows.Forms.TextBox();
             this.tabVigen = new System.Windows.Forms.TabPage();
-            this.txtVKey = new System.Windows.Forms.TextBox();
-            this.txtVInput = new System.Windows.Forms.TextBox();
-            this.txtVResult = new System.Windows.Forms.TextBox();
-            this.btnVigenereEncrypt = new System.Windows.Forms.Button();
             this.btnVigenereDecrypt = new System.Windows.Forms.Button();
+            this.btnVigenereEncrypt = new System.Windows.Forms.Button();
+            this.txtVResult = new System.Windows.Forms.TextBox();
+            this.txtVInput = new System.Windows.Forms.TextBox();
+            this.txtVKey = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabCeasar.SuspendLayout();
             this.tabVigen.SuspendLayout();
@@ -127,26 +127,15 @@
             this.tabVigen.Text = "Vigenere";
             this.tabVigen.UseVisualStyleBackColor = true;
             // 
-            // txtVKey
+            // btnVigenereDecrypt
             // 
-            this.txtVKey.Location = new System.Drawing.Point(7, 16);
-            this.txtVKey.Name = "txtVKey";
-            this.txtVKey.Size = new System.Drawing.Size(100, 20);
-            this.txtVKey.TabIndex = 0;
-            // 
-            // txtVInput
-            // 
-            this.txtVInput.Location = new System.Drawing.Point(7, 62);
-            this.txtVInput.Name = "txtVInput";
-            this.txtVInput.Size = new System.Drawing.Size(143, 20);
-            this.txtVInput.TabIndex = 1;
-            // 
-            // txtVResult
-            // 
-            this.txtVResult.Location = new System.Drawing.Point(186, 62);
-            this.txtVResult.Name = "txtVResult";
-            this.txtVResult.Size = new System.Drawing.Size(143, 20);
-            this.txtVResult.TabIndex = 2;
+            this.btnVigenereDecrypt.Location = new System.Drawing.Point(88, 106);
+            this.btnVigenereDecrypt.Name = "btnVigenereDecrypt";
+            this.btnVigenereDecrypt.Size = new System.Drawing.Size(75, 23);
+            this.btnVigenereDecrypt.TabIndex = 4;
+            this.btnVigenereDecrypt.Text = "Decrypt";
+            this.btnVigenereDecrypt.UseVisualStyleBackColor = true;
+            this.btnVigenereDecrypt.Click += new System.EventHandler(this.btnVigenereDecrypt_Click);
             // 
             // btnVigenereEncrypt
             // 
@@ -158,14 +147,26 @@
             this.btnVigenereEncrypt.UseVisualStyleBackColor = true;
             this.btnVigenereEncrypt.Click += new System.EventHandler(this.btnVigenereEncrypt_Click);
             // 
-            // btnVigenereDecrypt
+            // txtVResult
             // 
-            this.btnVigenereDecrypt.Location = new System.Drawing.Point(88, 106);
-            this.btnVigenereDecrypt.Name = "btnVigenereDecrypt";
-            this.btnVigenereDecrypt.Size = new System.Drawing.Size(75, 23);
-            this.btnVigenereDecrypt.TabIndex = 4;
-            this.btnVigenereDecrypt.Text = "Decrypt";
-            this.btnVigenereDecrypt.UseVisualStyleBackColor = true;
+            this.txtVResult.Location = new System.Drawing.Point(186, 62);
+            this.txtVResult.Name = "txtVResult";
+            this.txtVResult.Size = new System.Drawing.Size(143, 20);
+            this.txtVResult.TabIndex = 2;
+            // 
+            // txtVInput
+            // 
+            this.txtVInput.Location = new System.Drawing.Point(7, 62);
+            this.txtVInput.Name = "txtVInput";
+            this.txtVInput.Size = new System.Drawing.Size(143, 20);
+            this.txtVInput.TabIndex = 1;
+            // 
+            // txtVKey
+            // 
+            this.txtVKey.Location = new System.Drawing.Point(7, 16);
+            this.txtVKey.Name = "txtVKey";
+            this.txtVKey.Size = new System.Drawing.Size(100, 20);
+            this.txtVKey.TabIndex = 0;
             // 
             // Form1
             // 

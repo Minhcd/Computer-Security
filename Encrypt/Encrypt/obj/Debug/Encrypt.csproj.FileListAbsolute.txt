@@ -7,3 +7,4 @@ D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.csproj.GenerateResource.cache
 D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.csproj.CoreCompileInputs.cache
 D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.exe
 D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.pdb
+D:\Projects_VS\Encrypt\Encrypt\obj\Debug\Encrypt.csprojAssemblyReference.cache
